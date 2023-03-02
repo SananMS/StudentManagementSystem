@@ -3,11 +3,12 @@ package com.example.models;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
 @Entity
-@Table
+@Table(name = "students")
 @Getter
 @Setter
 public class Student {
@@ -28,5 +29,6 @@ public class Student {
     @Column
     private String major;
     @Column
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date enrollment_date;
 }

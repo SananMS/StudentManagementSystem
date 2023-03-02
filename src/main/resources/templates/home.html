@@ -1,10 +1,50 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+<h1>Student Management System</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Major</th>
+        <th>Enrollment Date</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="student : ${students}">
+        <td th:text="${student.id}"></td>
+        <td th:text="${student.first_name}"></td>
+        <td th:text="${student.last_name}"></td>
+        <td th:text="${student.email}"></td>
+        <td th:text="${student.phone}"></td>
+        <td th:text="${student.address}"></td>
+        <td th:text="${student.major}"></td>
+        <td th:text="${#dates.format(student.enrollment_date, 'yyyy-MM-dd')}"></td>
+        <td><a th:href="@{/edit/{id}(id=${student.id})}">Edit</a></td>
+        <td><a th:href="@{/delete/{id}(id=${student.id})}">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+<br/>
+<a href="/add">Add Student</a>
+</body>
+</html>
 
 </body>
 </html>
