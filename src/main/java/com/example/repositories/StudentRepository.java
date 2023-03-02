@@ -1,4 +1,4 @@
-package com.example.repositiries;
+package com.example.repositories;
 
 public class StudentRepository {
 }
