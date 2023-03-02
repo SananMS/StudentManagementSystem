@@ -1,4 +1,4 @@
 package com.example.controllers;
 
-public class StudentController \{
-        }
+public class StudentController {
+}
