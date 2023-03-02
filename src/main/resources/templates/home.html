@@ -35,7 +35,7 @@
         <td th:text="${student.phone}"></td>
         <td th:text="${student.address}"></td>
         <td th:text="${student.major}"></td>
-        <td th:text="${#dates.format(student.enrollment_date, 'yyyy-MM-dd')}"></td>
+        <td th:text="${#dates.format(student.enrollment_date, 'dd-MM-yyyy')}"></td>
         <td><a th:href="@{/edit/{id}(id=${student.id})}">Edit</a></td>
         <td><a th:href="@{/delete/{id}(id=${student.id})}">Delete</a></td>
     </tr>

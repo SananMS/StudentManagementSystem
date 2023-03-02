@@ -1,11 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Edit Student</title>
+    <link rel="stylesheet" href="../css/add.css">
 </head>
 <body>
-
+<h1>Edit Student</h1>
+<form th:action="@{'/edit/' + *{id}}" method="post" th:object="${student}">
+    <input type="hidden" th:field="*{id}"/>
+    <label for="firstName">First Name:</label><br/>
+    <input type="text" id="firstName" name="firstName" th:field="*{first_name}"/><br/>
+    <label for="lastName">Last Name:</label><br/>
+    <input type="text" id="lastName" name="lastName" th:field="*{last_name}"/><br/>
+    <label for="email">Email:</label><br/>
+    <input type="text" id="email" name="email" th:field="*{email}"/><br/>
+    <label for="phone">Phone:</label><br/>
+    <input type="text" id="phone" name="phone" th:field="*{phone}"/><br/>
+    <label for="address">Address:</label><br/>
+    <input type="text" id="address" name="address" th:field="*{address}"/><br/>
+    <label for="major">Major:</label><br/>
+    <input type="text" id="major" name="major" th:field="*{major}"/><br/>
+    <label for="enrollmentDate">Enrollment Date:</label><br/>
+    <input type="date" id="enrollmentDate" name="enrollmentDate" th:field="*{enrollment_date}"/><br/>
+    <br/>
+    <input type="submit" value="Save"/>
+</form>
+<br/>
+<a href="/">Back to List</a>
 </body>
 </html>
